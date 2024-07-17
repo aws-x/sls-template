@@ -1,0 +1,32 @@
+service: aws-trigget-lamda-via-endpoint
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: eu-west-1
+  iam:
+    role:
+      statements:
+      - Effect: Allow
+        Action: lambda:InvokeFunction
+        Resource: arn:aws:lambda:${aws:region}:${aws:accountId}:function:${self:service}-${opt:stage}-update_products_lambda
+
+functions:
+  update_products_http_api:
+    handler: functions/business/products.update
+    environment: 
+      SELF_SERVICE: ${self:service}
+      OPT_STAGE: ${opt:stage}
+    events:
+      - httpApi:
+          path: /products/{shop}
+          method: get
+
+  update_products_lambda:
+    handler: functions/business/update_products.updateAll
+    timeout: 90 # The update_products_http_api can have a maximum duration of 30 seconds. 
+    memorySize: 2048
+    environment:
+      UPDATE_INTERVAL_MIN: 300

@@ -1,0 +1,37 @@
+{
+    "version": "2.0",
+    "routeKey": "GET /endpoint_handler/{shop}",
+    "rawPath": "/endpoint_handler/xxx.com",
+    "rawQueryString": "",
+    "headers": {
+        "accept": "*/*",
+        "content-length": "0",
+        "host": "u1u4ejlipk.execute-api.eu-west-1.amazonaws.com",
+        "user-agent": "curl/8.1.2",
+        "x-amzn-trace-id": "Root=1-66195581-6d4bd84975d3cdc658e33269",
+        "x-forwarded-for": "82.196.27.6",
+        "x-forwarded-port": "443",
+        "x-forwarded-proto": "https"
+    },
+    "requestContext": {
+        "accountId": "327137264445",
+        "apiId": "u1u4ejlipk",
+        "domainName": "u1u4ejlipk.execute-api.eu-west-1.amazonaws.com",
+        "domainPrefix": "u1u4ejlipk",
+        "http": {
+            "method": "GET",
+            "path": "/endpoint_handler/xxx.com",
+            "protocol": "HTTP/1.1",
+            "sourceIp": "82.196.27.6",
+            "userAgent": "curl/8.1.2"
+        },
+        "requestId": "WHpMSiTPDoEEMeg=",
+        "routeKey": "GET /endpoint_handler/{shop}",
+        "stage": "$default",
+        "time": "12/Apr/2024:15:38:41 +0000",
+        "timeEpoch": 1712936321524
+    },
+    "pathParameters": { "shop": "xxx.com" },
+    "isBase64Encoded": false
+}
+
